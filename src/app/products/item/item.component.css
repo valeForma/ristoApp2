@@ -1,0 +1,30 @@
+.card-body{
+
+
+}
+.cardDiv{
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+.card{
+  box-shadow: 0 22px 22px 0 rgba(0, 0, 0, 0.6);
+  margin-top: 20%;
+}
+.myBadge{
+  position: absolute;
+  margin-left: -12px;
+  margin-top: -12px;
+  background-color: #f05522;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  z-index: 1100;
+  padding-top: 4%;
+}
+.card-footer{
+  color: #9b9b9b;
+}
+.card-text{
+  color: #9b9b9b;
+}

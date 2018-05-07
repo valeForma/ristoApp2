@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-10 offset-1 myDiv shadow" *ngFor="let order of orders" >
+
+      <div class="col-6 float-left"><h5> Ordered in Date {{order.date | date:'short'}}</h5> </div>
+      <div class="col-6 float-right"><h5> People at Table :{{order.persons}} </h5> </div>
+      <div class="col-12 text-center" ><h3>Total : {{order.total}} $</h3></div>
+
+      <app-order-detail  *ngFor="let item of order.products" [orderPart]="item" ></app-order-detail>
+    </div>
+  </div>
+</div>

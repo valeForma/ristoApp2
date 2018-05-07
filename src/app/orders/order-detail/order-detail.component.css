@@ -1,0 +1,24 @@
+.myBadge{
+  font-size: 22px;
+  background-color: #f05522;
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+
+  padding-top: 6%;
+}
+.myOrderDiv {
+  background-color: white;
+  padding-top: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+
+  box-shadow: 0 22px 22px 0 rgba(0, 0, 0, 0.6);
+}
+.myOrderDivLastRow{
+  color: #9b9b9b;
+}
+.myDetCDiv{
+  padding-top: 10%;
+}

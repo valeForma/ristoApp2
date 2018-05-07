@@ -1,0 +1,41 @@
+
+<nav class="navbar fixed-top myNavbar">
+
+<i (click)="onSidenav()" class="fa fa-2x fa-bars"></i>
+
+<div class="mx-auto">
+  <div class="myColor row">
+    <div class=" col-12 d-inline-block align-middle">
+     <button (click)="onAddPerson(-1)" class="myHeaderButton" ><i class="fa fa-angle-left"></i></button>
+       <label>{{(persons| async).orderItem.persons}}</label>
+      <button (click)="onAddPerson(1)" class="myHeaderButton"><i class="fa fa-angle-right"></i></button>
+    </div>
+    <div class=" myColor col-12 align-middle">people at table</div>
+    <div class=" myColor col-12 align-middle">recap</div>
+  </div>
+
+</div>
+
+
+</nav>
+<div *ngIf="sideOpen" (click)="onSidenav()" class="myBars">
+
+  <div>
+  <img src="./static/images/food_sidenav.png" class="img-fluid">
+  </div>
+  <ul class="list-group">
+
+        <li *ngIf="!((store.select('auth') | async ).logged)" class="list-group-item sideli"><a routerLink="/login" class="sideli" ><span><i class="fa fa-1x fa-sign-in"></i></span>  Login</a></li>
+        <li *ngIf="!((store.select('auth') | async ).logged)" class="list-group-item sideli"><a routerLink="/register" class="sideli"><span><i class="fa fa-1x fa-user-plus"></i></span>  Register</a></li>
+        <li *ngIf="(store.select('auth') | async ).logged" class="list-group-item sideli"><a (click)="onLogout()" class="sideli"><span><i class="fa fa-1x fa-sign-in"></i></span>  Logout</a></li>
+
+        <li class="list-group-item sideli"><a routerLink="/home" class="sideli"><span><i class="fa fa-1x fa-home"></i></span>  Home</a></li>
+        <li class="list-group-item sideli"><a routerLink="/products" class="sideli"><span><i class="fa fa-1x fa-shopping-bag"></i></span>  Products</a></li>
+        <li class="list-group-item sideli"><a routerLink="/orders" class="sideli"><span><i class="fa fa-1x fa-shopping-cart"></i></span>  Orders</a></li>
+        <li class="list-group-item sideli"><a routerLink="/checkout" class="sideli"><span><i class="fa fa-1x fa-credit-card"></i></span>  Checkout</a></li>
+
+
+  </ul>
+</div>
+
+

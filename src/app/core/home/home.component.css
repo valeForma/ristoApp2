@@ -1,0 +1,66 @@
+
+.homeButton{
+  position: fixed;
+  top: 70%;
+  left: 30%;
+  background-color: #f05522;
+
+
+  color: white;
+  font-size: 60px;
+  z-index: 10;
+  border-radius: 10%;
+}
+
+
+.titleRow{
+  position: fixed;
+  top:20%;
+  left:20%;
+  z-index: 10;
+
+  color: white;
+  font-size: 120px;
+}
+#mainDiv{
+  padding-top: 30%;
+
+  min-height: 100vh;
+  min-width: 100vw;
+  background-image: url("https://serene-earth-48536.herokuapp.com/static/images/food_background.png");
+  background-size: 100% 100%;
+}
+@media screen and (max-width: 700px){
+  .homeButton{
+    position: fixed;
+    top: 50%;
+    left: 15%;
+    background-color: #f05522;
+
+
+    color: white;
+    font-size: 40px;
+    z-index: 10;
+    border-radius: 10%;
+  }
+
+  .titleRow{
+    position: fixed;
+    top:20%;
+    left:5%;
+    z-index: 10;
+
+    color: white;
+    font-size: 60px;
+  }
+  #mainDiv{
+    padding-top: 30%;
+
+    min-height: 100vh;
+    min-width: 100vw;
+    background-image: url("https://serene-earth-48536.herokuapp.com/static/images/food_background.png");
+    background-size: 100% 100%;
+  }
+
+
+}
