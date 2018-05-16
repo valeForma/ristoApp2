@@ -28,14 +28,16 @@ userRouter.post('/register', (req,res) => {
 });
 userRouter.post('/login' , (req ,res ) => {
     var body= _.pick(req.body , ['email' , 'password']);
+
      console.log(body);
     User.FindByCredentials(body.email , body.password ).then((user) => {
-
+      user.DeleteOutdatedToken().then((res)=>{console.log(res);});
       return user.generateAuthToken().then((token) => {
          var userData={
              token: token,
              user: user
          };
+
         res.header('x-auth',token).send(userData);} ) } ).
         catch ((err)=>{
           console.log('hai rotto il cazzo');

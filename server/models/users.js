@@ -58,7 +58,11 @@ var UserSchema = new mongoose.Schema({
          type: String,
          required: true
        }
-
+       ,
+       data: {
+         type: Date,
+         default: Date.now
+       }
      }
    ]
 
@@ -110,6 +114,21 @@ UserSchema.statics.findByToken = function (token) {
     'tokens.access' : 'auth'
   });
 };
+UserSchema.methods.DeleteOutdatedToken = function (){
+  var user = this;
+
+  delData= new Date(Date.now());
+  console.log(delData);
+  //delData.setHours(data.getHours()-2);
+  delData.setMinutes(delData.getMinutes() -10 );
+  console.log(delData);
+
+  return user.update(
+    {$pull : {tokens : { data :{ $lte : delData }}}
+  },{multi:true});
+
+
+}
 UserSchema.statics.FindByCredentials = function (email, password){
   var User = this;
 

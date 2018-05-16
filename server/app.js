@@ -4,7 +4,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+const routes = require('express').Router();
 
 
 var {userRouter} = require('./routes/usersRoutes');
@@ -23,20 +23,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/static',express.static(path.join(__dirname, 'public')));
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "*");
-    res.header("Access-Control-Allow-Methods", "*");
-    next();
-});
-
-
+console.log(path.join(path.resolve(__dirname , '../dist/'),'index.html'));
 app.use('/api/users', userRouter);
 
 app.use('/api/products',productsRouter);
 
 app.use('/api/orders',orderRouter);
 
-app.use('/', express.static(path.join(__dirname, '../dist')));
+app.use( express.static(path.resolve(__dirname, '../dist')));
+app.get('*', function (req, res) {
+
+  res.sendFile(path.join(path.resolve(__dirname , '../dist/'),'index.html'));
+});
 
 module.exports = app;

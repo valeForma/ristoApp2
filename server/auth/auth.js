@@ -8,6 +8,7 @@ var authenticate = (req,res,next) =>{
       console.log("user not auth");
       return Promise.reject();
   }
+
   req.user=user;
   req.token=token;
   console.log("user auth");
@@ -17,4 +18,7 @@ var authenticate = (req,res,next) =>{
   });
 };
 
+
 module.exports ={authenticate };
+
+
