@@ -53,11 +53,11 @@
               <mat-error *ngIf="registerForm.hasError('passwordMustMatch')" class="mySmall">passwords must match</mat-error>
             </span>
           </mat-form-field>
-          <div fxLayout="row" fxLayoutAlign="start start">
-            <div fxFlex="40" fxFlexOffset="50" >
-               <button  mat-raised-button color="accent" [disabled]="!registerForm.valid" type="submit" >Login</button>
-            </div>
-          </div>
+
+
+               <button fxFlex="40" fxFlexOffset="50"  mat-raised-button color="accent" [disabled]="!registerForm.valid" type="submit" >Register</button>
+
+
 
         </form>
 
