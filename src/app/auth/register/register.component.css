@@ -1,15 +1,13 @@
-input.ng-invalid.ng-touched {
-  border: 1px solid red;
-}
 
-input.ng-valid.ng-touched {
-  border: 1px solid green;
-}
 .mainDiv{
-  padding-top: 20%;
+  padding-top: 10%;
   padding-bottom: 20%;
 }
-.mySmall{
-  color: red;
 
+mat-toolbar {
+  text-align: center;
+  font-size: large;
+  background-color: #f05522;
+  color: white;
+  margin-bottom: 5%;
 }

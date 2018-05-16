@@ -1,25 +1,27 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Product} from '../product.model';
 import {Store} from '@ngrx/store';
 import * as fromApp from '../../store/app.reducers';
-import * as fromOrders from '../../orders/store/orders.reducers'
+import * as fromOrders from '../../orders/store/orders.reducers';
 import * as ordersActions from '../../orders/store/orders.actions';
 import {Observable} from "rxjs/Observable";
+import {OrdersActions} from "../../orders/store/orders.actions";
+import {Subscription} from "rxjs/Rx";
 
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.css']
 })
-export class ItemComponent implements OnInit {
+export class ItemComponent implements OnInit , OnDestroy{
   @Input() item: Product;
    quantity = 0;
-
+  mySubscription: Subscription;
   constructor(private store: Store<fromApp.AppState>) {
   }
 
   ngOnInit() {
-   this.store.select('orders').take(1).subscribe((state: fromOrders.State) => {
+  this.mySubscription = this.store.select('orders').take(1).subscribe((state: fromOrders.State) => {
      if(state) {
        console.log('stato non nullo');
        if(!(state.orderItem.products.length === 0)){
@@ -40,7 +42,6 @@ export class ItemComponent implements OnInit {
   addProduct() {
     this.store.dispatch(new ordersActions.AddProduct(this.item));
     this.quantity++;
-
   }
 
   removeProduct() {
@@ -48,6 +49,8 @@ export class ItemComponent implements OnInit {
     this.quantity--;
   }
 
-
+ngOnDestroy(){
+    this.mySubscription.unsubscribe();
+}
 
 }

@@ -7,6 +7,8 @@ import * as ProductsActions from './products.actions';
 import * as fromProducts from './products.reducer';
 import {Store} from '@ngrx/store';
 import {Product} from '../product.model';
+import 'rxjs/add/operator/map';
+
 
 @Injectable()
 export class ProductsEffects {
@@ -19,7 +21,7 @@ export class ProductsEffects {
       return this.httpClient.get<Product[]>(this.url + 'products/', {
         observe: 'body',
         responseType: 'json'
-      })
+      });
     })
     .map( (products) => {
       console.log(products);

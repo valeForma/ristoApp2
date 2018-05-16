@@ -6,6 +6,7 @@ import {OrderListComponent} from "./order-list/order-list.component";
 import {OrderItemComponent} from "./order-item/order-item.component";
 import {OrdersRoutingModule} from "./orders-routing.module";
 import {CheckoutComponent} from "./checkout/checkout.component";
+import {MaterialFlexModule} from "../shared/material-flex.module";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {CheckoutComponent} from "./checkout/checkout.component";
   ],
   imports : [
     CommonModule,
-    OrdersRoutingModule
+    OrdersRoutingModule,
+    MaterialFlexModule
   ],
   exports:[
   ]

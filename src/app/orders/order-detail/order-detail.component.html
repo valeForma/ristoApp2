@@ -1,29 +1,28 @@
-<div class="row">
-  <div class="col-10 offset-1 myOrderDiv ">
-    <div class="row">
-      <div class="col-lg-5 col-md-4 col-sm-3">
-        <img class="img-fluid" src="./static/images/{{this.orderPart.product.imagePath}}">
-      </div>
-      <div class="col-lg-7 col-md-8 col-sm-9 ">
-        <div class="row">
-          <div class="col-8 myDetCDiv">
-            <h2 class="text-left">{{this.orderPart.product.name}}</h2>
-          </div>
-          <div class="col-4 myDetCDiv ">
-            <span class="badge myBadge float-right ">{{this.orderPart.quantity}}</span>
 
+<div  fxLayoutAlign="start start"  fxLayout="row">
+    <div class="myCardDiv" [class.mat-elevation-z8]="true"   fxFlex.xs="100"  fxFlex.sm="85" fxFlexOffset.sm="7.5" fxFlex.gt-xs="80" fxFlexOffset.gt-xs="10">
+      <mat-card fxFill fxFlex="100">
+        <mat-card-content fxLayout="row wrap" >
+        <div fxFlex.xs="60" fxFlex.sm="70" fxFlex.gt-sm="50">
+          <div  fxLayout="row wrap" fxFlexFill  >
+            <img   matCardImageSmall fxFlex.xs="50" fxFlex.sm="30" fxFlex.gt-sm="25" src="./static/images/{{this.orderPart.product.imagePath}}">
+            <h2 class="myText" fxFlexOffset="5" fxFlex.xs="30" fxFlex.sm="65" fxFlex.gt-sm="70">{{this.orderPart.product.name}}</h2>
           </div>
         </div>
-      </div>
+          <div fxFlex="10" fxFlexOffset.xs="20"   fxFlexOffset.gt-sm="30" fxFlexOffset.sm="10" >
+            <div class="myBadgeDiv" *ngIf="this.orderPart.quantity > 0" >
+              {{this.orderPart.quantity}}
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-footer fxLayout="row wrap">
+          <div fxFlex.xs="75" fxFlex.sm="55" fxFlex.gt-sm="45" fxFlexOffset="5">
+            <p>{{this.orderPart.product.description}}</p>
+          </div>
+          <div fxFlex.xs="20" fxFlex.gt-xs="10"  fxFlexOffset.sm="30" fxFlexOffset.gt-sm="40"  >
+            <h2 >{{this.orderPart.product.price}}$</h2>
+          </div>
+        </mat-card-footer>
+      </mat-card>
     </div>
-    <hr>
-    <div class="row myOrderDivLastRow">
-      <div class="col-8">
-        <p>{{this.orderPart.product.description}}</p>
-      </div>
-      <div class="col-4">
-        <p class="float-right">{{this.orderPart.product.price}}$</p>
-      </div>
-    </div>
-  </div>
 </div>

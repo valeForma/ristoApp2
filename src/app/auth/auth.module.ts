@@ -4,13 +4,14 @@ import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import {AuthRoutingModule} from "./auth.routing.module";
+import {MaterialFlexModule} from "../shared/material-flex.module";
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    AuthRoutingModule
-
+    AuthRoutingModule,
+    MaterialFlexModule
   ],
   declarations: [
     LoginComponent,

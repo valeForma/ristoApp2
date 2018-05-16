@@ -1,27 +1,27 @@
-<h1 class="text-center">Your Order</h1>
+<div class="myOrderWrapper" >
+<div *ngIf="order.products.length === 0" fxLayout="row" fxFlexAlign="start start" fxFlexFill>
+  <div  fxFlex="40" fxFlexOffset="5">
+    <h1  class="myTitle">No products selected</h1>
+  </div>
+  <div  fxFlex="30" >
+    <button (click)="onBackToProducts()" mat-raised-button color="accent" >Back To Products</button>
+  </div>
+</div>
 <app-order-detail *ngFor="let item of order.products" [orderPart]="item" ></app-order-detail>
 
-<div class="row totalRow">
-  <div class="col-10 offset-1">
-    <div class="row">
-      <div class="col-6 ">
-        <h1 class="float-left">Total price</h1>
+<div fxLayout="row" fxFlexAlign="start start">
+      <div fxFlexFill class="myPriceText" fxFill fxFlex="30" fxFlexOffset="10">
+        <h1 class="myPriceText" >Total </h1>
       </div>
-      <div class="col-6 ">
-        <h1 class="float-right">{{order.total}} $</h1>
+      <div  fxFlexFill class="myPrice" fxFlex="40" >
+        <h1 class="myPrice" >{{order.total}} $</h1>
       </div>
-    </div>
-  </div>
+
 </div>
-<div class="row">
-  <div class="col-10 offset-1">
-    <div *ngIf="order.products && order.products.length !== 0" class="row">
-      <div class="col-6">
-        <button (click)="onCancelOrder()" class="btn btn-outline-danger">cancel order</button>
-      </div>
-      <div class="col-6">
-        <button (click)="onSaveOrder()" class="btn btn-outline-success">save Order</button>
-      </div>
-    </div>
-  </div>
+
+
+
 </div>
+<button (click)="onActionClick()" class="myFloatingButton"  mat-fab>
+  <mat-icon  aria-label="Example icon-button with a heart icon">done_outline</mat-icon>
+</button>

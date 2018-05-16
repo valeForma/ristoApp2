@@ -3,3 +3,24 @@
   color: #9b9b9b;
   padding-bottom: 10%;
 }
+.myTitle{
+  text-align: center;
+  color: red;
+}
+.myPrice{
+  text-align: end;
+  color: #9b9b9b;
+}
+.myPriceText{
+  text-align: start;
+  color: #9b9b9b;
+}
+.myOrderWrapper{
+  padding-bottom: 10%;
+
+}
+.myFloatingButton{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}

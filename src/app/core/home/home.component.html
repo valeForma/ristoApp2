@@ -1,8 +1,15 @@
-<div  id="mainDiv">
+<div  id="mainDiv"  >
 
+  <div fxLayotAlign="start start"   fxLayout="row wrap">
+    <div  fxFlex.xs="90" fxFlexOffset.xs="5" fxFlex.gt-xs="70" fxFlexOffset.gt-xs="15">
+      <h1 ngStyle.xs="font-size: 50px"  ngStyle.sm="font-size: 70px" ngStyle.md="font-size: 80px" ngStyle.gt-md="font-size: 120px" class="titleRow" >What food do<br>u want today ?</h1>
+    </div>
+  </div>
+  <div class="myBtnDiv" fxLayotAlign="start start"   fxLayout="row">
+      <div fxFlex.xs="80" fxFlexOffset.xs="10" fxFlex.sm="60" fxFlexOffset.sm="20" fxFlex.gt-sm="50" fxFlexOffset.gt-sm="25">
+        <button fxFlexFill ngStyle.xs="font-size: 30px" ngStyle.sm="font-size: 50px" ngStyle.md="font-size: 60px" ngStyle.gt-md="font-size: 100px"  class="homeButton" (click)="OnHomeClick()">Go To Products</button>
+      </div>
+  </div>
 
-
-    <h1 class="titleRow text-center">What food do<br> u want today ?</h1>
-    <button class="homeButton" (click)="OnHomeClick()">Go To Products</button>
 
 </div>

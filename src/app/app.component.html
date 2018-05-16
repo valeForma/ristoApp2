@@ -1,7 +1,41 @@
-<app-header></app-header>
+<div class="myContainer">
+  <mat-toolbar class="myToolBar">
+    <mat-toolbar-row class="myToolBarRow" fxFlexAlign="center center">
+      <button class="myButton" (click)="snav.toggle()"><mat-icon fxFlex="1 1 20"   >menu</mat-icon></button>
+      <span fxFlex="50%" fxFlex.xs="25%" fxFlexAlign="center center">
 
-<router-outlet></router-outlet>
+       </span>
+      <mat-icon (click)="onAddPerson(-1)">keyboard_arrow_left</mat-icon>
+      <label>{{(persons| async).orderItem.persons}}</label>
+      <mat-icon (click)="onAddPerson(1)">keyboard_arrow_right</mat-icon>
+    </mat-toolbar-row >
 
+    <mat-toolbar-row class="myToolBarRow">
+      <span fxFlex="50%" fxFlex.xs="25%" >
 
-<app-footer></app-footer>
+       </span>
+      <label class="myText">people at table<br>{{(sharedState | async).toolBarTitle}}</label>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container  fxLayout="column" fxFlexFill fxLayoutAlign="start stretch" ngStyle.xs="margin-top: 110px" ngStyle.sm="margin-top: 120px" ngStyle.gt-sm="margin-top: 128px" >
+    <mat-sidenav [fixedInViewport]="true"  [fixedBottomGap]="0"  class="mySidenav" ngStyle.xs="margin-top: 110px;min-width: 60%" ngStyle.sm="margin-top: 120px;min-width: 40%" ngStyle.gt-sm="margin-top: 128px ;min-width: 25%"  #snav [mode]="'over'" >
+      <mat-nav-list>
+        <mat-list-item  *ngIf="!((store.select('auth') | async ).logged)" (click)="onItemClick(false,'/login');snav.close()" class=" sideli"><span><mat-icon>account_circle</mat-icon>  Login</span></mat-list-item >
+        <mat-list-item  *ngIf="!((store.select('auth') | async ).logged)"  (click)="onItemClick(false,'/register');snav.close()" class=" sideli"><a routerLink="/register" class="sideli" (click)="snav.close()"><mat-icon>person_add</mat-icon> Register</a></mat-list-item >
+        <mat-list-item  *ngIf="(store.select('auth') | async ).logged"  (click)="onLogout();snav.close()" class=" sideli"><mat-icon>exit_to_app</mat-icon> Logout</mat-list-item >
+        <mat-divider></mat-divider>
+        <mat-list-item (click)="onItemClick(true,'/home');snav.close()" class="sideli"> <mat-icon>home</mat-icon> Home</mat-list-item >
+        <mat-list-item  (click)="onItemClick(true,'/products');snav.close()" class="sideli"><mat-icon>shop_two</mat-icon>  Products</mat-list-item >
+        <mat-list-item  (click)="onItemClick(true,'/orders');snav.close()" class="sideli"><mat-icon>format_list_numbered</mat-icon>  Orders</mat-list-item >
+        <mat-list-item  (click)="onItemClick(true,'/checkout');snav.close()" class="sideli"><mat-icon>payment</mat-icon> Checkout</mat-list-item >
 
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="mySidenavContent">
+
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+</div>

@@ -13,16 +13,19 @@ import * as AuthActions from '../store/auth.actions';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  email: FormControl;
+  password: FormControl;
   loginForm: FormGroup;
   constructor(private store: Store<fromApp.AppState>) {
 
   }
 
   ngOnInit() {
+    this.email = new FormControl(null, [Validators.required , Validators.email]);
+    this.password =new FormControl(null, [ Validators.required , Validators.minLength(8)]);
     this.loginForm = new FormGroup({
-      'email': new FormControl(null, [Validators.required , Validators.email]) ,
-      'password': new FormControl(null, [ Validators.required , Validators.minLength(8)])
+      'email': this.email ,
+      'password': this.password
     });
 
   }

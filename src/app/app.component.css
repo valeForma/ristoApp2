@@ -1,6 +1,61 @@
-.myAppDiv{
-
-
+.sideli {
+  color:white;
+  background-color: #f05533;
+ display: block;
+}
+.sideli:hover{
+  opacity: 0.5;
 }
 
 
+.myToolBar{
+  position: fixed;
+  background-color: #f05522;
+  color: white;
+  z-index: 2;
+}
+.myButton{
+  background-color: #f05522;
+  color :white;
+  border: none;
+}
+.myMainDiv{
+  min-width: 100%;
+  background-color: #f5f5f8;
+}
+.myContainer{
+  background-color: #f5f5f8;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+}
+
+.mySidenav{
+
+  background-color: #f05522;
+}
+
+
+.myToolbarRow{
+ min-height: 10%;
+}
+a:focus{
+  outline: none;
+}
+button:focus{
+  outline: none;
+}
+mat-divider{
+  color: white;
+}
+.myText{
+  text-align: center;
+}
+.mySidenavContent{
+
+}

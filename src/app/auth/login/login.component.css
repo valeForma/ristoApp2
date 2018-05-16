@@ -1,21 +1,19 @@
-.loginDiv{
 
-  background-color: #f5f5f8;
-  padding-top: 2%;
-
-  border-radius: 5%;
-  border: solid 2px #9b9b9b;
-
-}
 input.ng-invalid.ng-touched {
-  border: 1px solid red;
+
+
 }
 .mainDiv{
- padding-top: 15%;
+ margin-top: 10%;
 }
-@media screen and (max-width: 500px){
-  .mainDiv{
-    padding-top: 35%;
-  }
 
+.myLoginCard{
+  width: 100%;
+}
+mat-toolbar {
+  text-align: center;
+  font-size: large;
+  background-color: #f05522;
+  color: white;
+  margin-bottom: 5%;
 }

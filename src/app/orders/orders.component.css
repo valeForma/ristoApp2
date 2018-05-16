@@ -1,16 +1,6 @@
-.mainDiv{
-
+.myOrdersWrapper{
   padding-top: 10%;
-  background-color: #f5f5f8 ;
   padding-bottom: 15%;
-}
-@media screen and (max-width: 500px){
-  .mainDiv{
-
-    padding-top: 25%;
-    background-color: #f5f5f8 ;
-    padding-bottom: 15%;
-  }
-
-
+  padding-left: 5%;
+  padding-right: 5%;
 }

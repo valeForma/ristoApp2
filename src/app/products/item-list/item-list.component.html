@@ -1,5 +1,20 @@
 
-<div class="row myRow">
-<app-item *ngFor="let prod of (products | async).productsList"  [item]="prod" ></app-item>
+<div  class="myProductsWrapper" fxLayout="row wrap"
+      fxFlexFill
+      fxLayoutAlign="start start">
+<div *ngFor="let prod of (products | async).productsList"
+     class="myListItem"
+     fxFlex.xs="85" fxFlexOffset.xs="7.5"
+     fxFlex.sm="40" fxFlexOffset.sm="6.6"
+     fxFlex.md="30" fxFlexOffset.md="2.5"
+     fxFlex.gt-md="20" fxFlexOffset="4"
+     [class.mat-elevation-z8]="true"  >
+     <app-item [item]="prod" ></app-item>
+
 </div>
 
+</div>
+
+<button (click)="onActionClick()" class="myFloatingButton"  mat-fab>
+  <mat-icon  aria-label="Example icon-button with a heart icon">arrow_forward_ios</mat-icon>
+</button>

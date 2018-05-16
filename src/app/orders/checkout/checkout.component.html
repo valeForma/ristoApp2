@@ -1,6 +1,11 @@
-<div class="container-fluid myCont">
+<div fxLayout="row wrap" class="myCheckoutWrapper" fxFill>
+  <div  fxFlex="100" >
+    <h1 style="text-align: center"> Thank You</h1>
+  </div>
 
-<h1 class="text-center"> Thank You</h1>
+<app-order-list [orders]="(myOrd | async).ordersList"></app-order-list>
 
 </div>
-<app-order-list [orders]="(myOrd | async).ordersList"></app-order-list>
+<button (click)="onActionClick()" class="myFloatingButton"  mat-fab>
+  <mat-icon  aria-label="Example icon-button with a heart icon">home</mat-icon>
+</button>

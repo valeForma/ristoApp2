@@ -1,20 +1,30 @@
-<div class="col-xl-3  col-lg-3 col-md-6   col-sm-12   cardDiv">
-  <div   class="card" style="width: 18rem;">
-    <span *ngIf="this.quantity > 0" class="badge myBadge">{{this.quantity}}</span>
-    <img (click)="addProduct()" class="card-img-top" src="./static/images/{{item.imagePath}}" alt="Card image cap">
-    <div (click)="addProduct()" class="card-body">
-      <h5 class="card-title">{{item.name}}</h5>
-      <p class="card-text">{{item.description}}</p>
-
-    </div>
-    <div class="card-footer text-muted">
-      <p class="float-left">Price </p>
-      <p class="float-right">{{item.price}} $</p>
-      <br>
-      <hr>
-      <span><i (click)="removeProduct()" class="fa fa-minus-circle  fa-2x float-left "></i></span>
-      <span><i (click)="addProduct()" class="fa fa-plus-circle fa-2x float-right "></i></span>
-    </div>
-  </div>
+<div class="myBadgeDiv" *ngIf="this.quantity > 0" [class.mat-elevation-z8]="true">
+  {{this.quantity}}
 </div>
+<mat-card class="myCard"
+          fxFill fxFlex="100">
 
+    <img  mat-card-image src="./static/images/{{item.imagePath}}">
+
+  <mat-card-title fxLayout="row" fxLayoutAlign=" start" >
+    <div fxFlex="80" fxFlexOffset="10">
+      <h5  >{{item.name}}</h5>
+    </div>
+  </mat-card-title>
+  <mat-card-content fxLayout="row wrap" fxLayoutAlign="start" >
+    <div fxFlex="90" fxFlexOffset="5">
+      <p >{{item.description}}</p>
+    </div>
+    <span fxFlex="60"></span>
+    <span class="myPrice" fxFlex="40">{{item.price}} $</span>
+
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-footer  >
+    <div fxFlexFill fxLayout="row" fxLayoutAlign="start start">
+      <span fxFill fxFlex="50" class="myFooterBtnLeft" ><button class="myButton" (click)="removeProduct()"> <mat-icon class="myIco" >remove_circle_outline</mat-icon></button></span>
+
+      <span fxFill fxFlex="40" class="myFooterBtnRight"><button class="myButton" (click)="addProduct()" > <mat-icon  class="myIco" >add_circle_outline</mat-icon></button></span>
+    </div>
+  </mat-card-footer>
+</mat-card>

@@ -1,3 +1,9 @@
-.myCont{
-  padding-top: 15%;
+myCheckoutWrapper{
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+.myFloatingButton{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }

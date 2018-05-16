@@ -1,12 +1,34 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-10 offset-1 myDiv shadow" *ngFor="let order of orders" >
+<div class="myDiv">
+  <div fxLayout="row wrap" fxLayoutAlign="start start">
+    <div fxFlex="90" fxFlexOffset="5" *ngFor="let order of orders" >
+    <mat-accordion>
 
-      <div class="col-6 float-left"><h5> Ordered in Date {{order.date | date:'short'}}</h5> </div>
-      <div class="col-6 float-right"><h5> People at Table :{{order.persons}} </h5> </div>
-      <div class="col-12 text-center" ><h3>Total : {{order.total}} $</h3></div>
 
-      <app-order-detail  *ngFor="let item of order.products" [orderPart]="item" ></app-order-detail>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header class="myPanelHeader">
+
+            <mat-panel-title fxLayout="row" >
+
+                <div fxFlex="100">
+                  <h3>Total : {{order.total}} $</h3>
+                  <h5> {{order.date | date:'short'}}</h5>
+
+
+                </div>
+
+
+            </mat-panel-title >
+            <mat-panel-description fxLayout="row" >
+              <h5> People at Table :{{order.persons}} </h5>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+            <app-order-detail  *ngFor="let item of order.products" [orderPart]="item" ></app-order-detail>
+        </mat-expansion-panel>
+
+    </mat-accordion>
     </div>
+
+
   </div>
 </div>

@@ -1,21 +1,33 @@
-<div class="container-fluid mainDiv ">
-  <div class="row">
-    <div  class="col-lg-4 col-md-6 offset-lg-4 col-sm-8 offset-sm-2  offset-md-3 loginDiv">
-         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-           <div class="form-group text-center">
-             <label  for="exampleInputEmail1">Email address</label>
-             <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
 
-           </div>
-           <div class="form-group text-center">
-             <label for="exampleInputPassword1">Password</label>
-             <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-           </div>
-           <div class="col-4 offset-4 form-group">
-            <button [disabled]="!loginForm.valid" type="submit" class="btn btn-outline-success">Login</button>
-           </div>
-         </form>
-    </div>
+<div class="mainDiv" fxLayout="row"  fxLayoutAlign="start center" fxFlexFill [class.mat-elevation-z8]="true" >
 
-  </div>
+    <mat-card fxFlex.xs="90" fxFlex.sm="60" fxFlex.gt-sm="50" fxFlexOffset.xs="5" fxFlexOffset.sm="20" fxFlexOffset.gt-sm="25" >
+      <mat-toolbar >
+        <mat-toolbar-row >
+        <h1 style="text-align: center">Login</h1>
+        </mat-toolbar-row>
+      </mat-toolbar>
+
+          <mat-card-content   >
+            <form fxLayout="row wrap" fxLayoutAlign="start center" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+                    <mat-form-field fxFlex="80" fxFlexOffset="10" >
+
+                        <input   matInput [formControl]="email" formControlName="email" type="email" placeholder="Enter email">
+                    </mat-form-field>
+
+
+                    <mat-form-field fxFlex="80" fxFlexOffset="10" >
+                      <input  matInput [formControl]="password"  formControlName="password" type="password" placeholder="Password">
+                    </mat-form-field>
+
+
+                    <button fxFlex="40" fxFlexOffset="30" mat-raised-button color="accent" [disabled]="!loginForm.valid" type="submit" >Login</button>
+
+
+            </form>
+
+          </mat-card-content>
+    </mat-card>
+
 </div>

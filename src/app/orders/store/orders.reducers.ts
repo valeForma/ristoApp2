@@ -6,12 +6,15 @@ import {Product} from "../../products/product.model";
 export interface State {
   orderItem: myOrder;
   ordersList: myOrder[];
+  orderSaved: boolean;
+  orderToSave: boolean;
 }
 
 const initialState: State = {
   orderItem :  new myOrder(1 , 1 , 0 , Date.now() , [] ) ,
-  ordersList : []
-
+  ordersList : [],
+  orderSaved: false,
+  orderToSave: false
 };
 
 export function ordersReducer(state = initialState, action: OrdersActions.OrdersActions){
@@ -63,6 +66,16 @@ export function ordersReducer(state = initialState, action: OrdersActions.Orders
         return{
           ...state,
           ordersList: action.payload
+        };
+      case OrdersActions.SET_ORDER_SAVED:
+        return{
+          ...state,
+          orderSaved: action.payload
+        };
+      case OrdersActions.SET_ORDER_TO_SAVE:
+        return{
+          ...state,
+          orderToSave: action.payload
         };
       default :
         return state;

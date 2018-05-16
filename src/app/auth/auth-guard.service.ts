@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} from "@angular/router";
 import {Observable} from "rxjs/Observable";
-
+import 'rxjs/add/operator/map';
 import {Store} from "@ngrx/store";
 
 import * as fromApp from '../store/app.reducers';

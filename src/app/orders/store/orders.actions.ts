@@ -11,8 +11,9 @@ export const UPDATE_TOTAL = 'UPDATE_TOTAL';
 export const CANCEL_ORDER = 'CANCEL_ORDER';
 export const LOAD_ORDERS = 'LOAD_ORDERS';
 export const SAVE_ORDER = 'SAVE_ORDER';
-export const SET_ORDERS_LIST = 'SET_ORDERS_LIST'
-
+export const SET_ORDERS_LIST = 'SET_ORDERS_LIST';
+export const SET_ORDER_SAVED = 'SET_ORDER_SAVED';
+export const SET_ORDER_TO_SAVE = 'SET_ORDER_TO_SAVE';
 
 export class AddProduct implements Action {
   readonly type = ADD_PRODUCT;
@@ -52,6 +53,17 @@ export class SetOrdersList implements Action{
 export class LoadOrders implements Action{
   readonly type = LOAD_ORDERS;
 }
+
+export class SetOrderSaved implements Action{
+  readonly type = SET_ORDER_SAVED;
+  constructor(public payload: boolean){
+  }
+}
+export class SetOrderTosave implements Action {
+  readonly type = SET_ORDER_TO_SAVE;
+  constructor(public payload: boolean){
+  }
+}
 export type OrdersActions =
   AddProduct |
   RemoveProduct |
@@ -60,4 +72,6 @@ export type OrdersActions =
   CancelOrder |
   SaveOrder |
   LoadOrders |
-  SetOrdersList;
+  SetOrdersList |
+  SetOrderSaved |
+  SetOrderTosave;

@@ -7,7 +7,7 @@ import * as fromApp from '../../store/app.reducers';
 import * as AuthActions from '../store/auth.actions';
 import {Observable} from "rxjs/Observable";
 import {HttpClient} from "@angular/common/http";
-
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-register',
@@ -20,6 +20,8 @@ import {HttpClient} from "@angular/common/http";
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
+
+
   constructor(private store: Store<fromApp.AppState>, private httpClient: HttpClient) { }
 
   ngOnInit() {

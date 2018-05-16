@@ -1,5 +1,15 @@
-.myRow{
+.myProductsWrapper{
 
-  padding-left: 10%;
-  padding-right: 5%;
+  min-width: 100%;
+}
+.myListItem{
+ position:relative;
+  margin-bottom: 10%;
+}
+
+
+.myFloatingButton{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }

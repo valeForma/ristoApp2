@@ -1,0 +1,15 @@
+.mySnackbarError{
+  background-color: #FF4500;
+  color: white;
+
+  text-align: center;
+  font-size: 50px;
+}
+.mySnackbarSuccess{
+  background-color: #98FB98;
+  color: white;
+
+  text-align: center;
+  font-size: 50px;
+}
+
